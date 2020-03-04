@@ -18,10 +18,13 @@
  */
 
 import './css/index.css'
+//webpackでhtmlに組み込まれたときに表示される
+console.info('Hello HtmlWebpackPlugin')
 
 var app = {
   // Application Constructor
   initialize: function() {
+    console.log('initialize')
     document.addEventListener(
       'deviceready',
       this.onDeviceReady.bind(this),
@@ -35,6 +38,7 @@ var app = {
   // 'pause', 'resume', etc.
   onDeviceReady: function() {
     this.receivedEvent('deviceready')
+    console.log('onDviceReady')
   },
 
   // Update DOM on a Received Event

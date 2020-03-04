@@ -612,6 +612,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 
 
+//webpackでhtmlに組み込まれたときに表示される
+console.info('Hello HtmlWebpackPlugin')
 
 var app = {
   // Application Constructor

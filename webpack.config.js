@@ -1,6 +1,7 @@
 const path = require('path')
 const internalIp = require('internal-ip')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 // [定数] webpack の出力オプションを指定します
 // 'production' か 'development' を指定
@@ -59,11 +60,21 @@ module.exports = {
         // 画像をBase64として取り込む
         loader: 'url-loader', // 拡張子が.scssのなかでURL参照をしている画像ファイルがあれば、url-loaderが適用
       },
+      {
+        test: /\.html$/,
+        loader: 'html-loader',
+      },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      filename: 'index.html',
+    }),
+  ],
 
   // source-map方式でないと、CSSの元ソースが追跡できないため
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
 
   // devtool: 'inline-source-map', //ブラウザでのデバッグ用にソースマップを出力する
 
