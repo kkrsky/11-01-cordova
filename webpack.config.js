@@ -3,7 +3,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 // [定数] webpack の出力オプションを指定します
 // 'production' か 'development' を指定
-const MODE = 'production'
+const MODE = 'development'
 
 // ソースマップの利用有無(productionのときはソースマップを利用しない)
 const enabledSourceMap = MODE === 'development'
@@ -12,11 +12,12 @@ module.exports = {
   // モード値を production に設定すると最適化された状態で、
   // development に設定するとソースマップ有効でJSファイルが出力される(webpack)
   mode: MODE,
-  entry: './webpack_test/bootstrap_add_test_src/src_practical/index.js', //'./src/index.js',
+  //entry: './webpack_test/bootstrap_add_test_src/src_practical/index.js',
+  entry: './src/index.js',
   output: {
-    path: `${__dirname}/webpack_test/bootstrap_add_test_src/dist`,
-    //path: `${__dirname}/www`,
-    filename: 'index_dist.js',
+    //path: `${__dirname}/webpack_test/bootstrap_add_test_src/dist`,
+    path: `${__dirname}/www`,
+    filename: 'index.js',
   },
   module: {
     rules: [
@@ -70,10 +71,7 @@ module.exports = {
   devServer: {
     contentBase: '/webpack_test/bootstrap_add_test_src/dist',
     watchContentBase: true,
-    contentBase: path.join(
-      __dirname,
-      '/webpack_test/bootstrap_add_test_src/dist'
-    ), // HTML等コンテンツのルートディレクトリ
+    contentBase: path.join(__dirname, 'www'), // HTML等コンテンツのルートディレクトリ
     open: true,
   },
 }
