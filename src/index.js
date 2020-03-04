@@ -16,6 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+import './css/index.css'
+
 var app = {
   // Application Constructor
   initialize: function() {

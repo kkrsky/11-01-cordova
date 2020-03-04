@@ -1,4 +1,5 @@
 const path = require('path')
+const internalIp = require('internal-ip')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 // [定数] webpack の出力オプションを指定します
@@ -19,48 +20,48 @@ module.exports = {
     path: `${__dirname}/www`,
     filename: 'index.js',
   },
+
   module: {
     rules: [
       {
         // 対象となるファイルの拡張子(scss)
         test: /\.(scss|css)$/,
         // Sassファイルの読み込みとコンパイル
-        use: ExtractTextPlugin.extract([
-          // CSSをバンドルするための機能
+        use: [
+          // linkタグに出力する機能
+          'style-loader',
+          //css-loader
           {
             loader: 'css-loader',
             options: {
               // オプションでCSS内のurl()メソッドの取り込まない
-              url: false,
+              url: true,
               // ソースマップの利用有無
-              sourceMap: true,
+              sourceMap: enabledSourceMap,
               // Sass+PostCSSの場合は2を指定
               importLoaders: 2,
             },
           },
-          // PostCSSのための設定
-          {
-            loader: 'postcss-loader',
-            options: {
-              // PostCSS側でもソースマップを有効にする
-              sourceMap: true,
-              // ベンダープレフィックスを自動付与する
-              plugins: () => [require('autoprefixer')],
-            },
-          },
+
           // Sassをバンドルするための機能
           {
             loader: 'sass-loader',
             options: {
               // ソースマップの利用有無
-              sourceMap: true,
+              sourceMap: enabledSourceMap,
             },
           },
-        ]),
+        ],
+      },
+      {
+        // 対象となるファイルの拡張子
+        test: /\.(gif|png|jpg|eot|wof|woff|ttf|svg)$/,
+        // 画像をBase64として取り込む
+        loader: 'url-loader', // 拡張子が.scssのなかでURL参照をしている画像ファイルがあれば、url-loaderが適用
       },
     ],
   },
-  plugins: [new ExtractTextPlugin('style.css')],
+
   // source-map方式でないと、CSSの元ソースが追跡できないため
   devtool: 'source-map',
 
@@ -73,6 +74,8 @@ module.exports = {
     watchContentBase: true,
     contentBase: path.join(__dirname, 'www'), // HTML等コンテンツのルートディレクトリ
     open: true,
+    host: internalIp.v4.sync(), // <- IPアドレス自動割り当て
+    //port: 8080,
   },
 }
 
@@ -132,7 +135,7 @@ rules: [
  rules: [
       {
         // 対象となるファイルの拡張子(scss)
-        test: /\.scss$/,
+        test: /\.(scss|css)$/,
         // Sassファイルの読み込みとコンパイル
         use: ExtractTextPlugin.extract([
           // CSSをバンドルするための機能
@@ -144,7 +147,7 @@ rules: [
               // ソースマップの利用有無
               sourceMap: true,
               // Sass+PostCSSの場合は2を指定
-              importLoaders: 2
+              importLoaders: 2,
             },
           },
           // PostCSSのための設定
@@ -154,7 +157,7 @@ rules: [
               // PostCSS側でもソースマップを有効にする
               sourceMap: true,
               // ベンダープレフィックスを自動付与する
-              plugins: () => [require('autoprefixer')]
+              plugins: () => [require('autoprefixer')],
             },
           },
           // Sassをバンドルするための機能
@@ -163,8 +166,8 @@ rules: [
             options: {
               // ソースマップの利用有無
               sourceMap: true,
-            }
-          }
+            },
+          },
         ]),
       },
     ]
