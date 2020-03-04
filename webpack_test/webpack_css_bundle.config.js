@@ -11,7 +11,7 @@ module.exports = {
   // モード値を production に設定すると最適化された状態で、
   // development に設定するとソースマップ有効でJSファイルが出力される(webpack)
   mode: MODE,
-  entry: './src/index.js', //'./src/index.js',
+  entry: './webpack_test/index.js', //'./src/index.js',
   output: {
     path: `${__dirname}/www`,
     //publicPath: '/www/src', //ブラウザからバンドルにアクセスする際のパス
