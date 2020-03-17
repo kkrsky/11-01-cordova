@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="C:\shizuoka_univ\myApp\e-bike\11th\01-cordova-only\platforms\android\CordovaLib\assets"/><source path="C:\shizuoka_univ\myApp\e-bike\11th\01-cordova-only\platforms\android\CordovaLib\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="C:\shizuoka_univ\myApp\e-bike\11th\01-cordova-only\platforms\android\CordovaLib\src\debug\assets"/></dataSet></merger>

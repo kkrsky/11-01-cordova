@@ -22,6 +22,7 @@
 		60E1C199BA8145EAB87D7202 /* BLECommandContext.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A688DF09A44DEC9FF6BA4F /* BLECommandContext.m */; };
 		8E7DE85A2B144DB5901C5051 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7AE23A965C747C2B7657A27 /* CoreBluetooth.framework */; };
 		0B60164B8071474D9996FFC1 /* QRScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8103CF8599344553B0E6D6D1 /* QRScanner.swift */; };
+		986B1029EECD4E1A8BEBB279 /* NativeStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9BF636EA744CAD9068902F /* NativeStorage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		6ADFCBC5CF804E22827EDB14 /* BLECommandContext.h */ = {isa = PBXFileReference; name = "BLECommandContext.h"; path = "cordova-plugin-ble-central/BLECentralPlugin/BLECommandContext.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		A7AE23A965C747C2B7657A27 /* CoreBluetooth.framework */ = {isa = PBXFileReference; name = "CoreBluetooth.framework"; path = "System/Library/Frameworks/CoreBluetooth.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		8103CF8599344553B0E6D6D1 /* QRScanner.swift */ = {isa = PBXFileReference; name = "QRScanner.swift"; path = "cordova-plugin-qrscanner/QRScanner.swift"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.swift; explicitFileType = undefined; includeInIndex = 0; };
+		4C9BF636EA744CAD9068902F /* NativeStorage.m */ = {isa = PBXFileReference; name = "NativeStorage.m"; path = "cordova-plugin-nativestorage/NativeStorage.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		5546B2822D76488EBC4313D2 /* NativeStorage.h */ = {isa = PBXFileReference; name = "NativeStorage.h"; path = "cordova-plugin-nativestorage/NativeStorage.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +185,8 @@
 				F61654A3DD5A41529EBB4310 /* CBPeripheral+Extensions.h */,
 				6ADFCBC5CF804E22827EDB14 /* BLECommandContext.h */,
 				8103CF8599344553B0E6D6D1 /* QRScanner.swift */,
+				4C9BF636EA744CAD9068902F /* NativeStorage.m */,
+				5546B2822D76488EBC4313D2 /* NativeStorage.h */,
 			);
 			name = Plugins;
 			path = "HelloCordova/Plugins";
@@ -298,6 +303,7 @@
 				918F0EDB45A34B86B6BF9354 /* CBPeripheral+Extensions.m in Sources */,
 				60E1C199BA8145EAB87D7202 /* BLECommandContext.m in Sources */,
 				0B60164B8071474D9996FFC1 /* QRScanner.swift in Sources */,
+				986B1029EECD4E1A8BEBB279 /* NativeStorage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

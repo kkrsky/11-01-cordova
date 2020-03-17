@@ -15,7 +15,13 @@ module.exports = {
   // development に設定するとソースマップ有効でJSファイルが出力される(webpack)
   mode: MODE,
   //entry: './webpack_test/bootstrap_add_test_src/src_practical/index.js',
-  entry: './src/index.js',
+  entry: [
+    //`${__dirname}/src/js/index.js`,
+
+    `${__dirname}/src/js/index.js`,
+    `${__dirname}/src/js/sub.js`,
+    `${__dirname}/src/js/bluetooth.js`,
+  ],
   output: {
     //path: `${__dirname}/webpack_test/bootstrap_add_test_src/dist`,
     path: `${__dirname}/www`,
@@ -81,11 +87,11 @@ module.exports = {
   // ローカル開発用環境を立ち上げる
   // 実行時にブラウザが自動的に localhost を開く(webpack-dev-server)
   devServer: {
-    contentBase: '/webpack_test/bootstrap_add_test_src/dist',
+    //contentBase: '/jQuery_test/dist',
     watchContentBase: true,
     contentBase: path.join(__dirname, 'www'), // HTML等コンテンツのルートディレクトリ
     open: true,
-    host: internalIp.v4.sync(), // <- IPアドレス自動割り当て
+    //host: internalIp.v4.sync(), // <- IPアドレス自動割り当て
     //port: 8080,
   },
 }

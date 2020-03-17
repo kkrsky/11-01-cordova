@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+  <head>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src * data: gap: content: cdvfile: https://ssl.gstatic.com;  style-src * 'unsafe-inline'; script-src 'self' 'unsafe-inline';"
+    />
+    <meta charset=" UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta
+      name="viewport"
+      content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"
+    />
+    <script type="text/javascript" src="vendors/jquery-dev-3.4.1.js"></script>
+    <script
+      type="text/javascript"
+      src="vendors/bootstrap/js/bootstrap.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendors/bootstrap/css/bootstrap.min.css"
+    />
+
+    <!--<link rel="stylesheet" type="text/css" href="css/index.css" />-->
+    <!--webpackにより自動でcssファイルがjsに組み込まれる-->
+    <title>BIKE app</title>
+  </head>
+
+  <body>
+    <div class="app">
+      <div id="device-not-ready" style="display: none">
+        <span>デバイスはまだ準備中～</span>
+      </div>
+
+      <div id="deviceready" class="blink">
+        <p class="event listening">Connecting to Devicesrc</p>
+        <p class="event received">Device is Ready</p>
+      </div>
+      <div id="test">
+        <button class="test_inout">inout</button>
+        <button class="test_in">input</button>
+        <button class="test_out">input</button>
+        <button class="test_scc scc">test success</button>
+        <button class="test_scc fal" style="display:none">
+          test failer
+        </button>
+        <ul id="ul-test">
+          <li class="bt test">1</li>
+          <li class="bt test">2</li>
+          <li class="bt test">3</li>
+        </ul>
+      </div>
+      <div id="device-ready" style="display: block">
+        <div class="panel">
+          <div id="device-info-wrapper">
+            <h3>device info</h3>
+
+            <div id="device-info" style="display:none">
+              <ul>
+                <li>
+                  device name:<span class="device-info device-info-name"></span>
+                </li>
+                <li>
+                  device id:<span class="device-info device-info-id"></span>
+                </li>
+                <li>
+                  device rssi:<span class="device-info device-info-rssi"></span>
+                </li>
+                <li>
+                  device services:<span
+                    class="device-info device-info-services"
+                  ></span>
+                </li>
+                <li>
+                  device chars:<span
+                    class="device-info device-info-chars"
+                  ></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="ble-scan-wrapper">
+            <button class="btn btn-outline-secondary btn-block btn-ble-scan">
+              BLE Scan
+            </button>
+            <ul id="ul-ble-scan-list"></ul>
+          </div>
+
+          <button
+            class="btn btn-outline-secondary btn-block btn-ble-disconnect"
+          >
+            BLE DisConnect
+          </button>
+
+          <button
+            class="btn btn btn-outline-secondary btn-block accordion-2"
+            onClick="onBLERead();"
+          >
+            BLE Read
+          </button>
+          <div id="">
+            <ul id="ul_bleReadList"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <!--<script type="text/javascript" src="js/index.js"></script>-->
+    <!--webpackにより自動でjsファイルが挿入される-->
+    <!-- <script type="text/javascript" src="index.js"></script>-->
+  <script type="text/javascript" src="index.js"></script></body>
+</html>
