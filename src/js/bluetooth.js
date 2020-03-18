@@ -352,6 +352,7 @@ $(document).ready(function() {
   /**
    * ==概要==
    * ble.scanで取得した任意のデータをクリックしたときにble接続
+   * storageに接続したdeviceidを保存
    *
    * ==呼び出し関数==
    *conBleConnect(id, success3, failed3)
@@ -399,7 +400,7 @@ $(document).ready(function() {
         }
       )
 
-      //#device-infoにデータを記入、表示
+      //#device-infoにデータを記入
       console.log('e', e)
       $('.device-info-name').text(e.name)
       $('.device-info-id').text(e.id)
