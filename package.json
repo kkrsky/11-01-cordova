@@ -12,7 +12,8 @@
     "prod": "webpack --mode production --env.production",
     "start": "webpack-dev-server --mode development --color --inline ",
     "browser": "npm run build && cordova run browser",
-    "android": "npm run build && cordova run android"
+    "android": "npm run build && cordova run android",
+    "ios": "cordova platform add ios"
   },
   "author": "Apache Cordova Team",
   "license": "Apache-2.0",
