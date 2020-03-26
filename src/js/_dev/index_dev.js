@@ -22,7 +22,7 @@ import 'bootstrap/dist/css/bootstrap.min.css' // Bootstrapのスタイルシー�
 import 'bootstrap' // BootstrapのJavaScript側の機能を読み込む
 
 import app_ble from 'src/js/_back/bluetooth.js'
-import app_controller from 'src/js/controller.js'
+import app_controller from 'src/js/controller/controller.js'
 //import './js/sub.js'
 
 console.info('HTML組込み完了') //webpackでhtmlに組み込まれたときに表示される
@@ -34,8 +34,29 @@ var app = {
 
     document.addEventListener('DOMContentLoaded', function() {
       console.log('listen DOMContentLoaded')
-      app_ble.init()
+      //DOMに登録しておく
+      //app_ble.init()
       app_controller.init()
+
+      /**
+       *
+       * 仮想 deviceready
+       *
+       */
+      window.alert('virtual deviceready')
+      setTimeout(() => {
+        // イベントを作る
+        const e = document.createEvent('Event')
+        // deviceready イベントを初期化する
+        e.initEvent('deviceready', true, false)
+        // イベントを発火させる
+        document.dispatchEvent(e)
+      }, 50)
+      /**
+       *
+       * 仮想 deviceready
+       *
+       */
     })
 
     document.addEventListener('load', function() {
@@ -68,29 +89,12 @@ var app = {
     listeningElement.setAttribute('style', 'display:none;')
     receivedElement.setAttribute('style', 'display:block;')
 
+    //app_ble.init()
     app_ble.test()
 
+    //もう一度devicereadyを発火(本来は常に発火しているので)
+    //$(document).trigger('deviceready')
     console.log('fin Received Event: ' + id)
   },
 }
 app.initialize()
-
-// /**
-//  *
-//  * 仮想 deviceready
-//  *
-//  */
-// window.alert('virtual deviceready')
-// setTimeout(() => {
-//   // イベントを作る
-//   const e = document.createEvent('Event')
-//   // deviceready イベントを初期化する
-//   e.initEvent('deviceready', true, false)
-//   // イベントを発火させる
-//   document.dispatchEvent(e)
-// }, 50)
-// /**
-//  *
-//  * 仮想 deviceready
-//  *
-//  */

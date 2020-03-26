@@ -31,7 +31,7 @@
       name="viewport"
       content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"
     />
-    <script type="text/javascript" src="vendors/jquery-dev-3.4.1.js"></script>
+    <!--<script type="text/javascript" src="vendors/jquery-dev.js"></script>
     <script
       type="text/javascript"
       src="vendors/bootstrap/js/bootstrap.min.js"
@@ -41,9 +41,8 @@
       type="text/css"
       href="vendors/bootstrap/css/bootstrap.min.css"
     />
-
-    <!--<link rel="stylesheet" type="text/css" href="css/index.css" />-->
-    <!--webpackにより自動でcssファイルがjsに組み込まれる-->
+    <link rel="stylesheet" type="text/css" href="css/index.css" />-->
+    <!--webpackにより自動でindex.css, bootstrapファイルがjsに組み込まれる-->
     <title>BIKE app</title>
   </head>
 
@@ -113,7 +112,14 @@
             <button class="btn btn-outline-secondary btn-block btn-ble-scan">
               BLE Scan
             </button>
-            <ul id="ul-ble-scan-list"></ul>
+            <ul id="ul-ble-scan-list">
+              <li class="bt list ble-scan-list" data-id="6C:05:2B:EA:6B:78">
+                デバッグ用 id=6C:05:2B:EA:6B:78 (iphone7)
+              </li>
+              <li class="bt list ble-scan-list" data-id="88:A9:B7:A9:0E:77">
+                デバッグ用 id=88:A9:B7:A9:0E:77 (iphone11)
+              </li>
+            </ul>
           </div>
 
           <button

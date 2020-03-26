@@ -10,7 +10,8 @@
     "build": "webpack  --mode development --color --progress",
     "watch": "webpack --mode development --watch --color --progress",
     "prod": "webpack --mode production --env.production",
-    "start": "webpack-dev-server --mode development --color --inline ",
+    "start": "webpack-dev-server --mode development --color --inline --config src/js/_dev/webpack.dev.conf.js",
+    "start2": "webpack-dev-server --mode development --color --inline ",
     "browser": "npm run build && cordova run browser",
     "android": "npm run build && cordova run android",
     "ios": "cordova platform add ios"
@@ -19,20 +20,26 @@
   "license": "Apache-2.0",
   "dependencies": {
     "bootstrap": "^4.4.1",
+    "cordova-android": "^7.1.4",
+    "cordova-browser": "^5.0.4",
     "cordova-plugin-add-swift-support": "^2.0.2",
     "cordova-plugin-ble-central": "^1.2.4",
     "cordova-plugin-nativestorage": "^2.3.2",
     "cordova-plugin-whitelist": "^1.3.4",
-    "jquery": "^3.4.1",
+    "cordova-sqlite-storage": "5.0.0",
     "popper.js": "^1.16.1"
   },
   "cordova": {
     "plugins": {
       "cordova-plugin-ble-central": {},
       "cordova-plugin-whitelist": {},
-      "cordova-plugin-nativestorage": {}
+      "cordova-plugin-nativestorage": {},
+      "cordova-sqlite-storage": {}
     },
-    "platforms": []
+    "platforms": [
+      "browser",
+      "android"
+    ]
   },
   "devDependencies": {
     "@babel/cli": "^7.7.7",
@@ -51,6 +58,7 @@
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "internal-ip": "^5.0.0",
+    "jquery": "^3.4.1",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
     "sass": "^1.26.2",

@@ -19,7 +19,7 @@ module.exports = {
   entry: [
     //`${__dirname}/src/js/index.js`,
 
-    `${__dirname}/src/js/index.js`,
+    `${__dirname}/src/js/index_dev.js`,
     //`${__dirname}/src/js/sub.js`,
     // `${__dirname}/src/js/bluetooth.js`,
   ],
@@ -27,11 +27,6 @@ module.exports = {
     //path: `${__dirname}/webpack_test/bootstrap_add_test_src/dist`,
     path: `${__dirname}/www`,
     filename: 'index.js',
-  },
-  resolve: {
-    alias: {
-      src: path.resolve(__dirname, './src'),
-    },
   },
 
   module: {
@@ -82,10 +77,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html',
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/pages/p001/p001.html',
-      filename: 'p001.html',
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',

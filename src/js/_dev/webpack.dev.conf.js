@@ -19,8 +19,8 @@ module.exports = {
   entry: [
     //`${__dirname}/src/js/index.js`,
 
-    `${__dirname}/src/js/index.js`,
-    //`${__dirname}/src/js/sub.js`,
+    `${__dirname}/index_dev.js`, //webpack.dev.conf.jsファイルから見た相対パス
+    `${__dirname}/dev_depend.js`,
     // `${__dirname}/src/js/bluetooth.js`,
   ],
   output: {
@@ -30,10 +30,9 @@ module.exports = {
   },
   resolve: {
     alias: {
-      src: path.resolve(__dirname, './src'),
+      src: path.resolve(__dirname, '../../../src'),
     },
   },
-
   module: {
     rules: [
       {
@@ -84,7 +83,7 @@ module.exports = {
       filename: 'index.html',
     }),
     new HtmlWebpackPlugin({
-      template: './src/pages/p001/p001.html',
+      template: './src/pages/p001.html',
       filename: 'p001.html',
     }),
     new webpack.ProvidePlugin({
