@@ -83,7 +83,7 @@ module.exports = {
       filename: 'index.html',
     }),
     new HtmlWebpackPlugin({
-      template: './src/pages/p001.html',
+      template: './src/pages/p001/p001.html',
       filename: 'p001.html',
     }),
     new webpack.ProvidePlugin({

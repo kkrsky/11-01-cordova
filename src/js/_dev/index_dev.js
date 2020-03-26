@@ -22,7 +22,7 @@ import 'bootstrap/dist/css/bootstrap.min.css' // Bootstrapのスタイルシー�
 import 'bootstrap' // BootstrapのJavaScript側の機能を読み込む
 
 import app_ble from 'src/js/_back/bluetooth.js'
-import app_controller from 'src/js/controller/controller.js'
+import app_controller from 'src/js/controller.js'
 //import './js/sub.js'
 
 console.info('HTML組込み完了') //webpackでhtmlに組み込まれたときに表示される
