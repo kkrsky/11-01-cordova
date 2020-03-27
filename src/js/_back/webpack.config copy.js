@@ -1,6 +1,6 @@
 const path = require('path')
-const internalIp = require('internal-ip')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+// const internalIp = require('internal-ip')
+// const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 
@@ -15,24 +15,26 @@ module.exports = {
   // モード値を production に設定すると最適化された状態で、
   // development に設定するとソースマップ有効でJSファイルが出力される(webpack)
   mode: MODE,
-  //entry: './webpack_test/bootstrap_add_test_src/src_practical/index.js',
+  // entry: './webpack_test/bootstrap_add_test_src/src_practical/index.js',
   entry: [
-    //`${__dirname}/src/js/index.js`,
+    // `${__dirname}/src/js/index.js`,
 
-    `${__dirname}/index_dev.js`, //webpack.dev.conf.jsファイルから見た相対パス
-    `${__dirname}/dev_depend.js`,
+    `${__dirname}/src/js/index.js`,
+    // `${__dirname}/src/js/sub.js`,
     // `${__dirname}/src/js/bluetooth.js`,
   ],
   output: {
-    //path: `${__dirname}/webpack_test/bootstrap_add_test_src/dist`,
+    // path: `${__dirname}/webpack_test/bootstrap_add_test_src/dist`,
     path: `${__dirname}/www`,
     filename: 'index.js',
   },
   resolve: {
     alias: {
-      src: path.resolve(__dirname, '../../../src'),
+      src: path.resolve(__dirname, './src'),
+      root: path.resolve(__dirname, './'),
     },
   },
+
   module: {
     rules: [
       {
@@ -79,12 +81,16 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: 'src/index.html',
       filename: 'index.html',
     }),
     new HtmlWebpackPlugin({
-      template: './src/pages/p001/p001.html',
+      template: 'src/pages/p001/p001.html',
       filename: 'p001.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/pages/p001/p0011.html',
+      filename: 'p0011.html',
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',

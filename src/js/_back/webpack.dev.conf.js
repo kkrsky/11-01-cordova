@@ -3,6 +3,8 @@ const internalIp = require('internal-ip')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
+const htmlLoader=require("./webpack.pages.js")
+
 
 // [定数] webpack の出力オプションを指定します
 // 'production' か 'development' を指定
@@ -19,8 +21,8 @@ module.exports = {
   entry: [
     //`${__dirname}/src/js/index.js`,
 
-    `${__dirname}/src/js/index_dev.js`,
-    //`${__dirname}/src/js/sub.js`,
+    `${__dirname}/index_dev.js`, //webpack.dev.conf.jsファイルから見た相対パス
+    `${__dirname}/dev_depend.js`,
     // `${__dirname}/src/js/bluetooth.js`,
   ],
   output: {
@@ -28,7 +30,11 @@ module.exports = {
     path: `${__dirname}/www`,
     filename: 'index.js',
   },
-
+  resolve: {
+    alias: {
+      src: path.resolve(__dirname, '../../../src'),
+    },
+  },
   module: {
     rules: [
       {
@@ -74,14 +80,26 @@ module.exports = {
     ],
   },
   plugins: [
+    htmlLoader,
+    /*
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: 'src/index.html',
       filename: 'index.html',
     }),
+    new HtmlWebpackPlugin({
+      template: 'src/pages/p001/p001.html',
+      filename: 'p001.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/pages/p001/p0011.html',
+      filename: 'p0011.html',
+    }),
+    
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
     }),
+    */
   ],
 
   // source-map方式でないと、CSSの元ソースが追跡できないため
