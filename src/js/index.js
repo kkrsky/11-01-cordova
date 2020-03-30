@@ -17,15 +17,15 @@
  * under the License.
  */
 
-import 'src/css/index.css'
+import 'src/index.css'
 import 'bootstrap/dist/css/bootstrap.min.css' // Bootstrapのスタイルシート側の機能を読み込む
 import 'bootstrap' // BootstrapのJavaScript側の機能を読み込む
 
-import app_ble from 'src/js/_back/bluetooth.js'
+//import app_ble from 'src/js/_back/bluetooth.js'
 import app_controller from 'src/js/controller.js'
 //import './js/sub.js'
 
-console.info('HTML組込み完了') //webpackでhtmlに組み込まれたときに表示される
+console.info('HTML組込み完了 from index.js') //webpackでhtmlに組み込まれたときに表示される
 
 var app = {
   // Application Constructor
@@ -34,7 +34,8 @@ var app = {
 
     document.addEventListener('DOMContentLoaded', function() {
       console.log('listen DOMContentLoaded')
-      app_ble.init()
+      //app_ble.init()]
+
       app_controller.init()
     })
 
@@ -61,14 +62,8 @@ var app = {
   // Update DOM on a Received Event
   receivedEvent: function(id) {
     console.log('start receivedEvent(id): ' + id)
-    var parentElement = document.getElementById(id)
-    var listeningElement = parentElement.querySelector('.listening')
-    var receivedElement = parentElement.querySelector('.received')
 
-    listeningElement.setAttribute('style', 'display:none;')
-    receivedElement.setAttribute('style', 'display:block;')
-
-    app_ble.test()
+    //app_ble.test()
 
     console.log('fin Received Event: ' + id)
   },

@@ -1,0 +1,38 @@
+/*重複しているスタイルがある場合の優先順位
+
+1-index.css
+2-各ファイル専用のcss
+3-common.css
+
+※下に行くほど高い
+*/
+
+#header,
+#footer {
+  text-align: center;
+
+  background: #00fcfc;
+  box-shadow: 0 0 5px rgba(#000, 0.2);
+  z-index: 1;
+  height: 50px;
+  line-height: 50px;
+}
+#header {
+  overflow: auto;
+  background-color: #999;
+}
+
+#main {
+  overflow: auto;
+  background-color: #ccc;
+}
+
+#footer {
+  background-color: #eee;
+}
+
+.grid {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 50px auto 50px;
+}

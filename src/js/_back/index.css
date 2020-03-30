@@ -1,0 +1,67 @@
+@import url('./css/common.css');
+@import url('./pages/top/top.css');
+/*重複しているスタイルがある場合の優先順位
+1-index.css
+2-下に行くほど高い
+*/
+
+div#header,
+div#footer {
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  background: #00fcfc;
+  box-shadow: 0 0 5px rgba(#000, 0.2);
+  z-index: 1;
+}
+
+/*
+div#header {
+  background-color: antiquewhite;
+}
+*/
+
+div#footer {
+  background-color: aqua;
+}
+.received {
+  float: right;
+  margin-right: 10px;
+}
+.grid {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 50px auto 50px;
+}
+
+#main {
+  overflow: auto;
+  background-color: aquamarine;
+}
+
+#test {
+  border: solid 5px #000000;
+}
+
+ul {
+  list-style: none;
+  border-bottom: 1px solid #d3d3d3;
+  text-align: left;
+}
+
+li {
+  margin-left: -40px;
+  padding: 5px;
+  padding-top: 10px;
+  min-height: 50px;
+  border-top: 1px solid #d3d3d3;
+  font-size: 0.9em;
+}
+
+.bt {
+  cursor: pointer;
+}
+
+.device-info {
+  text-align: center;
+}

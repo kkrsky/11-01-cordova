@@ -1,0 +1,22 @@
+@import url('./css/common.css');
+@import url('./pages/ble/ble.css');
+
+/*ライブラリ*/
+@import url('./vendors/iziToast/iziToast.min.css');
+@import url('./vendors/fontawsome/fontawesome.min.css');
+
+/*ライブラリを登録する場合
+1-index.css @import
+2-webpack.pages.js */
+/*重複しているスタイルがある場合の優先順位
+
+1-index.css
+2-各ファイル専用のcss
+3-common.css
+
+※下に行くほど高い
+*/
+/*bootstrap.cssでp margin-bottom 1remがデフォルトで適応されているため*/
+p {
+  margin-bottom: 0px !important;
+}

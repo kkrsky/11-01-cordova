@@ -10,6 +10,8 @@ var reset = '\u001b[0m'
 var green = '\u001b[32m'
 
 if (process.env.npm_lifecycle_event === 'dev') {
+  //document.createEvent('Event').initEvent('debug-dev', true, false)
+  //$(document).trigger('debug-dev')
   console.info(green + '\n[info] this is virtual cordova\n' + reset)
   const config = merge(baseConfig, pluginConfig, developConfig_server)
   module.exports = config

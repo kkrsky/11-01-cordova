@@ -1,5 +1,9 @@
 const MODE = 'development'
-const entry = ['src/js/_dev/index_dev.js', 'src/js/_dev/cordova_plugin_demo.js']
+const entry = [
+  'src/js/_dev/index_dev.js',
+  'src/js/_dev/cordova_plugin_demo.js',
+  'src/vendors/iziToast/iziToast.min.js',
+]
 
 // ソースマップの利用有無(productionのときはソースマップを利用しない)
 const enabledSourceMap = MODE === 'development'

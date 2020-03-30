@@ -17,15 +17,16 @@
  * under the License.
  */
 
-import 'src/css/index.css'
+import 'src/index.css'
 import 'bootstrap/dist/css/bootstrap.min.css' // Bootstrapのスタイルシート側の機能を読み込む
 import 'bootstrap' // BootstrapのJavaScript側の機能を読み込む
 
-import app_ble from 'src/js/_back/bluetooth.js'
+//import app_ble from 'src/js/_back/bluetooth.js'
 import app_controller from 'src/js/controller.js'
+import view from 'src/js/view.js'
 //import './js/sub.js'
 
-console.info('HTML組込み完了') //webpackでhtmlに組み込まれたときに表示される
+console.info('HTML組込み完了 from index.js') //webpackでhtmlに組み込まれたときに表示される
 
 var app = {
   // Application Constructor
@@ -43,7 +44,8 @@ var app = {
        * 仮想 deviceready
        *
        */
-      window.alert('virtual deviceready')
+      //window.alert('virtual deviceready')
+      view.toast_info('virtual cordova ready')
       setTimeout(() => {
         // イベントを作る
         const e = document.createEvent('Event')
@@ -82,15 +84,9 @@ var app = {
   // Update DOM on a Received Event
   receivedEvent: function(id) {
     console.log('start receivedEvent(id): ' + id)
-    var parentElement = document.getElementById(id)
-    var listeningElement = parentElement.querySelector('.listening')
-    var receivedElement = parentElement.querySelector('.received')
-
-    listeningElement.setAttribute('style', 'display:none;')
-    receivedElement.setAttribute('style', 'display:block;')
 
     //app_ble.init()
-    app_ble.test()
+    //app_ble.test()
 
     //もう一度devicereadyを発火(本来は常に発火しているので)
     //$(document).trigger('deviceready')
