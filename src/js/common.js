@@ -9,6 +9,12 @@ window.c = {
   white: '\u001b[37m',
   reset: '\u001b[0m',
 }
+
+window.test = {
+  console: (item, state) => {
+    console.log('this state: ', state, '\nitem: ', item)
+  },
+}
 const common = {
   init: function() {
     console.log(c.cyan + '[init]', 'common')

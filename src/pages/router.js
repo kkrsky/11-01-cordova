@@ -1,5 +1,5 @@
 const pages = {
-  ready: ['#deviceready', 'top.html'], //レイアウト用のhtmlを読み込む
+  ready: ['#deviceready', 'layout.html'], //レイアウト用のhtmlを読み込む
   secondReady: [
     //レイアウトに対する初期ページを読み込む
     ['#header', ''],
@@ -8,10 +8,9 @@ const pages = {
   ],
   transition: {
     click: [
-      ['#main', 'main.html', '#tr_to_main', 'src/pages/main/main.html'], //main表示
+      ['#main', 'main.html', '#tr_to_main'], //main表示
       ['#main', 'test.html', '#tr_to_test'], //test表示
-      ['#footer', 'ble.html', '#ttt'],
-      ['#header', 'test.html', '#ttt2'],
+      ['#main', 'ble.html', '#tr_to_ble_test', 'src/pages/ble/ble_test.html'],
     ],
   },
 }
