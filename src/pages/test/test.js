@@ -178,6 +178,9 @@ const test = {
   ble_test: {
     scan: function() {},
     autoConnect: function() {},
+    disconnect: function() {},
+    read: function() {},
+    write: function() {},
   },
 }
 
