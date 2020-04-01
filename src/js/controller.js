@@ -47,17 +47,31 @@ import router from 'src/js/router_core.js'
  * 命名規則
  * id    :スネークケース (jsで扱うため)
  * class :ケバブケース (html)
+ * 関数   :キャメルケース（動詞＋目的語）、宣言はfunctionを用いて、適宜bind(this)にする
+ * 変数   :キャメルケース(動詞＋目的語)
+ * 定数   ：全大文字スネークケース
  *
  */
 
 let app_controller = {
   init: function() {
-    common.init()
+    /**
+     * base
+     */
     router.init()
+    common.init()
     app_view.init()
+    app_model.init()
+
+    /**
+     * コンポーネント
+     */
     ble.init()
     //main.init()
 
+    /**
+     * テスト
+     */
     test.init()
   },
 }

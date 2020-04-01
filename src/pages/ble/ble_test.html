@@ -1,54 +1,46 @@
-<div id="device-ready" style="display: block">
-  <div class="panel">
-    <div id="device-info-wrapper">
-      <h3>device info</h3>
+<div id="ble_test_wrapper">
+  <div id="device-info-wrapper">
+    <h3>device info</h3>
 
-      <div id="device-info" style="display:none">
-        <ul>
-          <li>
-            device name:<span class="device-info device-info-name"></span>
-          </li>
-          <li>device id:<span class="device-info device-info-id"></span></li>
-          <li>
-            device rssi:<span class="device-info device-info-rssi"></span>
-          </li>
-          <li>
-            device services:<span
-              class="device-info device-info-services"
-            ></span>
-          </li>
-          <li>
-            device chars:<span class="device-info device-info-chars"></span>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div id="ble-scan-wrapper">
-      <button class="btn btn-outline-secondary btn-block btn-ble-scan">
-        BLE Scan
-      </button>
-      <ul id="ul-ble-scan-list">
-        <li class="bt list ble-scan-list" data-id="6C:05:2B:EA:6B:78">
-          デバッグ用 id=6C:05:2B:EA:6B:78 (iphone7)
+    <div id="device-info" style="display:none">
+      <ul>
+        <li>device name:<span class="device-info device-info-name"></span></li>
+        <li>device id:<span class="device-info device-info-id"></span></li>
+        <li>device rssi:<span class="device-info device-info-rssi"></span></li>
+        <li>
+          device services:<span class="device-info device-info-services"></span>
         </li>
-        <li class="bt list ble-scan-list" data-id="88:A9:B7:A9:0E:77">
-          デバッグ用 id=88:A9:B7:A9:0E:77 (iphone11)
+        <li>
+          device chars:<span class="device-info device-info-chars"></span>
         </li>
       </ul>
     </div>
-
-    <button class="btn btn-outline-secondary btn-block btn-ble-disconnect">
-      BLE DisConnect
+  </div>
+  <div id="ble-scan-wrapper">
+    <button class="btn btn-outline-secondary btn-block btn-ble-scan">
+      BLE Scan
     </button>
+    <ul id="ul-ble-scan-list">
+      <li class="bt list ble-scan-list" data-id="6C:05:2B:EA:6B:78">
+        デバッグ用 id=6C:05:2B:EA:6B:78 (iphone7)
+      </li>
+      <li class="bt list ble-scan-list" data-id="88:A9:B7:A9:0E:77">
+        デバッグ用 id=88:A9:B7:A9:0E:77 (iphone11)
+      </li>
+    </ul>
+  </div>
 
-    <button
-      class="btn btn btn-outline-secondary btn-block accordion-2"
-      onClick="onBLERead();"
-    >
-      BLE Read
-    </button>
-    <div id="">
-      <ul id="ul_bleReadList"></ul>
-    </div>
+  <button class="btn btn-outline-secondary btn-block btn-ble-disconnect">
+    BLE DisConnect
+  </button>
+
+  <button
+    class="btn btn btn-outline-secondary btn-block accordion-2"
+    onClick="onBLERead();"
+  >
+    BLE Read
+  </button>
+  <div id="">
+    <ul id="ul_bleReadList"></ul>
   </div>
 </div>

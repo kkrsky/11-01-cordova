@@ -17,7 +17,7 @@ window.test = {
 }
 const common = {
   init: function() {
-    console.log(c.cyan + '[init]', 'common')
+    console.log(c.cyan + '[init]', 'common.js')
   },
 }
 
