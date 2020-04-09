@@ -3,14 +3,19 @@ const pages = {
   secondReady: [
     //レイアウトに対する初期ページを読み込む
     ['#header', ''],
-    ['#main', 'test.html'],
+    ['#main', 'login.html'],
     ['#footer', ''],
   ],
   transition: {
     click: [
       ['#main', 'main.html', '#tr_to_main'], //main表示
       ['#main', 'test.html', '#tr_to_test'], //test表示
-      ['#main', 'ble.html', '#tr_to_ble_test', 'src/pages/ble/ble_test.html'],
+      [
+        '#main',
+        'ble_test.html',
+        '#tr_to_ble_test',
+        'src/pages/ble/ble_test.html',
+      ],
       ['#main', 'diagnostic.html', '#tr_to_diagnostic'],
     ],
   },

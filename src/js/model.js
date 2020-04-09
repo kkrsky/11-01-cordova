@@ -34,16 +34,17 @@ let app_model = {
         id,
         obj,
         function (elm) {
-          this.setSuccess(elm)
+          this.setSuccess(elm, id)
           check = true
         }.bind(this),
         this.setError.bind(this)
       )
       return check
     },
-    setSuccess: function (obj) {
+    setSuccess: function (obj, id) {
       console.log(c.green + '[success]', 'set:', obj)
-      _cons(obj)
+      $(document).trigger('save_' + id)
+      //_cons(obj)
     },
     setError: function (error) {
       console.log(c.red + '[failed]', 'set')
@@ -83,7 +84,7 @@ let app_model = {
 
       console.log('get: ', obj)
       this.output_true(obj)
-      console.log(this)
+      //console.log(this)
     },
     getError: function (error) {
       console.log(c.red + '[failed]', 'get')

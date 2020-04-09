@@ -1,5 +1,7 @@
 import view from 'src/js/view.js'
 import model from 'src/js/model.js'
+import common from 'src/js/common.js'
+
 const util = require('util') //for primisefy
 
 //コールバックの中身確認用
@@ -156,7 +158,14 @@ const test = {
             this.ble_test.scan('#result')
           }.bind(this)
         )
-
+        $(document).on('click', '#test_async', function () {
+          let id = 'test'
+          let callback = (elm) => {
+            console.log(c.red + elm)
+          }
+          common.set_async(id)
+          common.get_async(id, callback)
+        })
         $(document).on('click', '#test_promise', function () {
           // コールバックスタイルの関数
           function callbackStyleFunction(data, delay, callback) {
@@ -197,43 +206,36 @@ const test = {
               console.log('err' + err)
             })
         })
+
         $(document).on('click', '.ble-scan-list', function () {
           let id = $(this).data('id')
 
-          let save_id = that.data.storage_id.connect_device_id
+          let save_id_deviceId = that.data.storage_id.connect_device_id
           let save_obj = { id: id }
-          let check_save_id = model.nativeStorage.setItem(save_id, save_obj)
+          model.nativeStorage.setItem(save_id_deviceId, save_obj)
 
-          // if (check_save_id === true) {
-          const autoConnect = util.promisify(that.ble_test.autoConnect)
-          autoConnect(id).then((result) => {
-            console.log(result)
-          })
-
-          /*
-          async function tes() {
-            console.log('id', id)
-            return await autoConnect(id)
-          }
-          tes()
-          console.log(tes())
-          */
-
-          /*
-          let connected_item = that.ble_test.autoConnect(id)
+          let save_id_device_info = that.data.storage_id.connected_device_info
+          let connected_item = that.ble_test.autoConnect(
+            id,
+            save_id_device_info
+          )
           console.log(c.red + 'connected_item', connected_item)
-          if (connected_item !== false) {
-            save_id = that.data.storage_id.connected_device_info
-            model.nativeStorage.setItem(save_id, connected_item)
-          } else {
-            window.alert('device 接続失敗、もう一度接続してください')
-          }
-          */
 
-          // } else {
-          //window.alert('device id受け取り失敗、もう一度接続してください')
-          // }
+          //window.alert('device 接続失敗、もう一度接続してください')
         })
+        /*
+        $(document).on(
+          'save_' + this.data.storage_id.connected_device_info,
+          function () {
+            console.log(c.cyan + '[fired]', 'save_connected_device_info')
+            model.nativeStorage.getItem(
+              this.data.storage_id.connected_device_info
+            )
+            let connected_obj = model.nativeStorage.output()
+            console.log(c.red + 'connected_obj', connected_obj)
+          }.bind(this)
+        )
+        */
         $(document).on(
           'click',
           '#btn_ble_test_autoConnect',
@@ -449,7 +451,7 @@ const test = {
       //ble.scan(services, seconds, success, failure);
 
       console.log(c.cyan + '[start]', 'ble scan')
-
+      $(appendElem).empty()
       ble.scan(
         [],
         5,
@@ -470,6 +472,7 @@ const test = {
               device.id
 
             //挿入
+
             $('<button>' + html + '</button>')
               .attr({
                 class: 'ble-scan-list list-group-item list-group-item-action',
@@ -485,7 +488,7 @@ const test = {
         }
       )
     },
-    autoConnect: function (id) {
+    autoConnect: function (id, save_id) {
       console.log(c.cyan + '[start]', 'ble autoConnect', id)
       let check = false
 
@@ -495,7 +498,7 @@ const test = {
         let called = 'ble autoConnect'
         let comment = 'success connect'
         let alert = 'alert'
-        //this.success(elm, called, comment, alert)
+        this.success(elm, called, comment, alert)
       }
 
       let failed_connect = (err) => {
@@ -513,6 +516,7 @@ const test = {
         id,
         function (elm) {
           console.log('autoConnect success elm', elm)
+          model.nativeStorage.setItem(save_id, elm)
           if (success_connect === undefined) {
             //接続維持の時、ble.autoConnect()単体で呼ばれる？
             this.success(
