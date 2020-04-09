@@ -1,5 +1,6 @@
 @import url('./css/common.css');
 @import url('./pages/ble/ble.css');
+@import url('./pages/diagnostic/diagnostic.css');
 
 /*ライブラリ*/
 @import url('./vendors/iziToast/iziToast.min.css');

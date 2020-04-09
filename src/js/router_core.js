@@ -25,6 +25,7 @@ const router = {
           )
           $(ready2[i][0]).load('./' + ready2[i][1])
         }
+        //$(document).trigger('deviceSecondReady')
       }, 100)
     })
 

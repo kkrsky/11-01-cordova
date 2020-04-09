@@ -15,9 +15,27 @@ window.test = {
     console.log('this state: ', state, '\nitem: ', item)
   },
 }
+
+let platform = ''
+function setDeviceInfo() {
+  console.log(c.cyan + '[start]', 'setDeviceInfo()')
+  platform = device.platform.toLowerCase()
+  if (platform.match(/win/)) {
+    platform = 'windows'
+  }
+  $('body').addClass(platform)
+}
+
 const common = {
   init: function() {
     console.log(c.cyan + '[init]', 'common.js')
+    setDeviceInfo()
+    $(document).on('pause', function() {
+      console.log(c.cyan + '[start]', 'pause')
+    })
+    $(document).on('resume', function() {
+      console.log(c.cyan + '[start]', 'resume')
+    })
   },
 }
 

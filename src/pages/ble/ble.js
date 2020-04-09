@@ -4,7 +4,6 @@ let top = {
   init: function() {
     console.log(c.cyan + '[init]', 'ble.js')
     $(document).on('deviceready', () => {
-      console.log(this)
       this.test()
     })
   },
@@ -18,7 +17,9 @@ let top = {
     model.nativeStorage.keys() //NativeStorage.keysを実行し、outputに出力
     let keys = model.nativeStorage.output()
     console.log('check keys', keys)
-    if (keys.indexOf(id) > -1) {
+    if (keys === false) {
+      return false
+    } else if (keys.indexOf(id) > -1) {
       //idは存在する
       return true
     } else {

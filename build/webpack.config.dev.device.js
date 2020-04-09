@@ -1,5 +1,9 @@
 const MODE = 'development'
-const entry = ['src/js/index.js', 'src/vendors/iziToast/iziToast.min.js']
+const entry = [
+  'src/js/index.js',
+  'src/vendors/iziToast/iziToast.min.js',
+  //'src/pages/diagnostic/diagnostic.js',
+]
 
 // ソースマップの利用有無(productionのときはソースマップを利用しない)
 const enabledSourceMap = MODE === 'development'

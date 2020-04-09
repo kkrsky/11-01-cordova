@@ -6,6 +6,7 @@ import common from 'src/js/common.js'
 import test from 'src/pages/test/test.js'
 import ble from 'src/pages/ble/ble.js'
 import main from 'src/pages/main/main.js'
+import diagnostic from 'src/pages/diagnostic/diagnostic.js'
 
 /*utility*/
 import router from 'src/js/router_core.js'
@@ -68,6 +69,7 @@ let app_controller = {
      */
     ble.init()
     //main.init()
+    diagnostic.init()
 
     /**
      * テスト
