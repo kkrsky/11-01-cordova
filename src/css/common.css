@@ -7,7 +7,7 @@
 ※下に行くほど高い
 */
 #deviceready {
-  background-color: rgba(146, 146, 148, 1);
+  background-color: white; /* rgba(146, 146, 148, 1);*/
 }
 #header,
 #footer {

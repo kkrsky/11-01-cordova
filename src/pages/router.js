@@ -3,7 +3,7 @@ const pages = {
   secondReady: [
     //レイアウトに対する初期ページを読み込む
     ['#header', '_header.html'],
-    ['#main', '_main.html'],
+    ['#main', 'test.html'],
     ['#footer', '_footer.html'],
   ],
   transition: {

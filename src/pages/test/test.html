@@ -1,4 +1,4 @@
-<div id="test">
+<div id="test" style="display: none;">
   <button id="tr_to_main" class="btn btn-primary">
     Go to main page
   </button>
@@ -34,7 +34,7 @@
     <button id="test_async">test_async</button>
     <button id="test_promise">test_promise</button>
     <button id="btn_ble_test_scan">test scan</button>
-    <p>result:<span id="result"></span></p>
+    <p>result:<span id="result" class="result-ble-scan"></span></p>
 
     <button id="btn_ble_test_autoConnect">test autoConnect</button>
     <button id="btn_ble_test_disconnect">test disconnect</button>
@@ -93,4 +93,32 @@
       iziToast test
     </button>
   </div>
+</div>
+<div id="ble-test" class="container">
+  <button
+    id="btn_ble_test_scan"
+    class="btn btn-outline-secondary btn-block btn-ble-scan"
+  >
+    test scan
+  </button>
+  <p>result:<span id="result" class="result-ble-scan"></span></p>
+
+  <button
+    id="btn_ble_test_autoConnect"
+    class="btn btn-outline-secondary btn-block"
+  >
+    test autoConnect
+  </button>
+  <button
+    id="btn_ble_test_disconnect"
+    class="btn btn-outline-secondary btn-block"
+  >
+    test disconnect
+  </button>
+  <button id="btn_ble_test_read" class="btn btn-outline-secondary btn-block">
+    test read
+  </button>
+  <button id="btn_ble_test_write" class="btn btn-outline-secondary btn-block">
+    test write
+  </button>
 </div>

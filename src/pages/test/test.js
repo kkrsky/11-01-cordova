@@ -155,7 +155,7 @@ const test = {
           'click',
           '#btn_ble_test_scan',
           function () {
-            this.ble_test.scan('#result')
+            this.ble_test.scan('.result-ble-scan')
           }.bind(this)
         )
         $(document).on('click', '#test_async', function () {
