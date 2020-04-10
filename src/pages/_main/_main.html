@@ -1,0 +1,85 @@
+<div id="main_container" class="main-wrapper container">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col">
+      <div id="lock_wrapper" class="lock-wrapper">
+        <i
+          id="btn_lock"
+          class="mt-5 btn-lock fa fa-4x fa-lock circle btn-shadow locked-color"
+        ></i>
+      </div>
+    </div>
+    <div class="col-2"></div>
+  </div>
+
+  <!-- Button trigger modal -->
+  <div id="main_info_wrapper" class="main-info-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col main-info">
+          <div
+            class="btn-shadow list-group-item list-group-item-action rounded-pill"
+            data-toggle="modal"
+            data-target="#exampleModalCenter"
+          >
+            <div class="container">
+              <div class="row">
+                <div class="col-10">
+                  <p>設定を有効にしてください</p>
+                </div>
+                <div class="col-2">
+                  <i class="fa fa-angle-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="exampleModalCenter"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalCenterTitle">
+                    Bluetoothを有効にしてください
+                  </h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  バイクとアプリを接続するためにはbluetoothを有効にする必要があります
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button type="button" class="btn btn-primary">
+                    Setting Changes
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-1"></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -6,7 +6,9 @@
 
 ※下に行くほど高い
 */
-
+#deviceready {
+  background-color: rgba(146, 146, 148, 1);
+}
 #header,
 #footer {
   text-align: center;
@@ -22,9 +24,10 @@
 }
 
 #main {
-  margin: 50px 0px;
+  margin: 82px 0px;
   /*overflow: auto;*/
   background-color: #ccc;
+  background-size: 100% auto;
 }
 
 #footer {
@@ -40,14 +43,27 @@
 /*一般機能*/
 
 /*buttonなど以外の要素をタップできるようにするios用*/
-.bt {
+.btn-simple {
   cursor: pointer;
 }
-.bt :hover {
-  background-color: orange;
+.btn-simple:active {
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
+  border-bottom: none;
 }
 
 li {
   list-style: none;
   /*clear: right;*/
+}
+
+.btn-shadow {
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.29);
+  cursor: pointer;
+}
+.btn-shadow:active {
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  -webkit-transform: translateY(5px);
+  transform: translateY(5px);
+  border-bottom: none;
 }

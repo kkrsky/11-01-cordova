@@ -1,0 +1,11 @@
+div i:active {
+  color: rgba(255, 0, 0, 0.7);
+}
+
+.footer-active {
+  background-color: gray;
+  color: rgba(255, 0, 0, 0.5);
+}
+.btn-footer {
+  padding: 5px;
+}

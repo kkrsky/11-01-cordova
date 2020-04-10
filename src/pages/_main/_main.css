@@ -1,0 +1,38 @@
+.circle {
+  position: relative;
+  padding: 30%;
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
+.locked-color {
+  background-color: rgba(104, 104, 106, 1);
+  color: white;
+}
+
+.unlocked-color {
+  background-color: white;
+  color: rgba(104, 104, 106, 1);
+}
+
+.main-wrapper {
+  background-size: 100% auto;
+  position: relative;
+  top: -6px;
+}
+
+.lock-wrapper {
+  margin-top: 50%;
+}
+
+.main-info {
+  margin-top: 30%;
+}
+.list-group-item p {
+  font-size: 3vw;
+  font-weight: bold;
+}
+.list-group-item i {
+  color: red;
+}

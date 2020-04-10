@@ -5,7 +5,9 @@ import common from 'src/js/common.js'
 /*コンポーネント*/
 import test from 'src/pages/test/test.js'
 import ble from 'src/pages/ble/ble.js'
-import main from 'src/pages/main/main.js'
+import _main from 'src/pages/_main/_main.js'
+import _header from 'src/pages/_header/_header.js'
+import _footer from 'src/pages/_footer/_footer.js'
 import diagnostic from 'src/pages/diagnostic/diagnostic.js'
 
 /*utility*/
@@ -55,7 +57,7 @@ import router from 'src/js/router_core.js'
  */
 
 let app_controller = {
-  init: function() {
+  init: function () {
     /**
      * base
      */
@@ -68,8 +70,10 @@ let app_controller = {
      * コンポーネント
      */
     ble.init()
-    //main.init()
+    _main.init()
     diagnostic.init()
+    _header.init()
+    _footer.init()
 
     /**
      * テスト

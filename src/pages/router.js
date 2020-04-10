@@ -2,13 +2,13 @@ const pages = {
   ready: ['#deviceready', 'layout.html'], //レイアウト用のhtmlを読み込む
   secondReady: [
     //レイアウトに対する初期ページを読み込む
-    ['#header', ''],
-    ['#main', 'login.html'],
-    ['#footer', ''],
+    ['#header', '_header.html'],
+    ['#main', '_main.html'],
+    ['#footer', '_footer.html'],
   ],
   transition: {
     click: [
-      ['#main', 'main.html', '#tr_to_main'], //main表示
+      ['#main', '_main.html', '#tr_to_main'], //main表示
       ['#main', 'test.html', '#tr_to_test'], //test表示
       [
         '#main',
@@ -17,6 +17,15 @@ const pages = {
         'src/pages/ble/ble_test.html',
       ],
       ['#main', 'diagnostic.html', '#tr_to_diagnostic'],
+      //header
+      ['#main', 'status.html', '#tr_header_status'],
+      ['#main', 'history.html', '#tr_header_history'],
+      ['#main', 'profile.html', '#tr_header_profile'],
+      //footer
+      ['#main', '_main.html', '#tr_footer_home'],
+      ['#main', 'diagnostic.html', '#tr_footer_setting'],
+      ['#main', 'login.html', '#tr_footer_bike'],
+      ['#main', 'map.html', '#tr_footer_map'],
     ],
   },
 }
